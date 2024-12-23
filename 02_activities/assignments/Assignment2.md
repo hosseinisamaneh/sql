@@ -53,9 +53,34 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
-```
-Your answer...
-```
+1. Type 1:
+
+In this approach, whenever a customer updates their address, the previous address is completely overwritten with the new one. Only the most recent address is stored, and older addresses are lost. In Type 1 no historical data is retained. Only the current address is stored.
+
+Table structure:
+customer_id (Primary Key)
+address
+city
+postal_code
+country
+updated_at (timestamp of the last update)
+
+
+
+2. Type 2
+
+In this approach, a new row is created each time the customer updates their address, with a start date and end date to track the address history. The table retains all previous addresses, allowing you to track when each address was in effect. In Type 2 historical data is retained, and each address change is tracked with start and end dates.
+
+
+Table structure:
+customer_id (Primary Key)
+address
+city
+postal_code
+country
+start_date (date the address became effective)
+end_date (date the address was replaced or is no longer valid)
+
 
 ***
 
