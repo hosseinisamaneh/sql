@@ -64,7 +64,7 @@ city
 postal_code
 country
 updated_at (timestamp of the last update)
-Characteristics:
+
 
 
 2. Type 2
@@ -80,7 +80,7 @@ postal_code
 country
 start_date (date the address became effective)
 end_date (date the address was replaced or is no longer valid)
-Characteristics:
+
 
 ***
 
